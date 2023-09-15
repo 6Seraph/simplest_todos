@@ -43,7 +43,7 @@ test("removes task", () => {
   )
   const task = screen.getByText("new_task_3")
   const delButton = task.nextElementSibling
-  fireEvent.click(delButton as Element | Node | Document | Window)
+  fireEvent.click(delButton as Element)
   expect(task).not.toBeInTheDocument()
 })
 
@@ -53,8 +53,6 @@ test("filters tasks", () => {
       <App />
     </Provider>,
   )
-  const task1 = () => screen.getByText("new_task_1")
-  const task2 = () => screen.getByText("new_task_2")
   const filterActive = screen.getByRole("radio", { name: "active" })
   fireEvent.click(filterActive)
   expect(screen.queryByText("new_task_1")).not.toBeInTheDocument()
