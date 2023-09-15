@@ -43,7 +43,7 @@ test("removes task", () => {
   )
   const task = screen.getByText("new_task_3")
   const delButton = task.nextElementSibling
-  fireEvent.click(delButton)
+  fireEvent.click(delButton as Element | Node | Document | Window)
   expect(task).not.toBeInTheDocument()
 })
 
