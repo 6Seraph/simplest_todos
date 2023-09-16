@@ -6,6 +6,8 @@ interface Props {
   value: Filter
 }
 
+const filterButtonClass = "btn btn-outline-primary btn-sm focus-ring"
+
 function FilterButton({ current = false, value }: Props) {
   const dispatch = useAppDispatch()
   const filter = useAppSelector(selectTodoListFilter)
@@ -23,7 +25,7 @@ function FilterButton({ current = false, value }: Props) {
       />
       <label
         htmlFor={`${value}Filter`}
-        className="btn btn-outline-primary btn-sm focus-ring"
+        className={filterButtonClass}
       >
         {value}
       </label>
