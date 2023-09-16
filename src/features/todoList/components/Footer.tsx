@@ -2,8 +2,8 @@ import { useAppDispatch, useAppSelector } from "../../../app/hooks"
 import { selectTodoList, clear } from ".."
 import { Filter } from "."
 
-const footerClass =
-  "align-items-center border border-top-0 p-1 rounded-bottom-3 row"
+const clearButtonClass = "btn btn-light btn-sm col-3 focus-ring",
+footerClass = "align-items-center border border-top-0 p-1 rounded-bottom-3 row"
 
 function Footer() {
   const dispatch = useAppDispatch()
@@ -21,7 +21,7 @@ function Footer() {
       <Filter />
       <button
         onClick={() => dispatch(clear())}
-        className="btn btn-light btn-sm col-3 focus-ring"
+        className={clearButtonClass}
       >
         Clear completed
       </button>
