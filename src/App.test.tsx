@@ -16,6 +16,7 @@ test("adds task", () => {
   fireEvent.keyUp(input, { key: "Enter" })
   fireEvent.change(input, { target: { value: "new_task_3" } })
   fireEvent.keyUp(input, { key: "Enter" })
+  expect(screen.getByText("3 items left")).toBeInTheDocument()
   expect(screen.getByText("new_task_1")).toBeInTheDocument()
   expect(screen.getByText("new_task_2")).toBeInTheDocument()
   expect(screen.getByText("new_task_3")).toBeInTheDocument()
