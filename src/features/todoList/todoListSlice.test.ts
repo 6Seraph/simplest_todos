@@ -6,11 +6,11 @@ import reducer, {
   toggleFilter,
 } from "./todoListSlice"
 
-describe("Store works", () => {
-  const todo1 = { active: true, id: "1", text: "foo" }
-  const todo2 = { active: true, id: "2", text: "bar" }
-  const todo3 = { active: true, id: "3", text: "foobar" }
+const todo1 = { active: true, id: "1", text: "foo" }
+const todo2 = { active: true, id: "2", text: "bar" }
+const todo3 = { active: true, id: "3", text: "foobar" }
 
+describe("Store works", () => {
   test("adds todo to store", () => {
     const result = reducer({ list: [], filter: "all" }, add(todo1))
     expect(result.list[0]).toEqual(todo1)
